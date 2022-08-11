@@ -11,7 +11,7 @@ function changePassword(email, newPassword, callback) {
     if (err) return callback(err);
 
     const db = client.db("test_db");
-    const users = db.collection("efuse_user");
+    const users = db.collection("auth_user");
 
     bcrypt.hash(newPassword, 10, function (err, hash) {
       if (err) {
